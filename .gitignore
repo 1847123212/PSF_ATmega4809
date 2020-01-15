@@ -1,0 +1,7 @@
+# Ignoring files according to http://microchip.wikidot.com/faq:72
+/PSF_ATmega4809.X/build/
+/PSF_ATmega4809.X/dist/
+#Ingoring private Makefiles, to create them open the MPLAB IDE or use the C:\Program Files (x86)\Microchip\MPLABX\<VERSION>\mplab_ide\bin\prjMakefilesGenerator.bat script
+/PSF_ATmega4809.X/nbproject/Makefile-*
+/PSF_ATmega4809.X/nbproject/Package-*
+/PSF_ATmega4809.X/nbproject/private/
