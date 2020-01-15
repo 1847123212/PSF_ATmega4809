@@ -4,6 +4,37 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="MCC Generated Files"
+                     displayName="MCC Generated Files"
+                     projectFiles="true">
+        <logicalFolder name="config" displayName="config" projectFiles="true">
+          <itemPath>mcc_generated_files/config/clock_config.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="include" displayName="include" projectFiles="true">
+          <itemPath>mcc_generated_files/include/cpuint.h</itemPath>
+          <itemPath>mcc_generated_files/include/port.h</itemPath>
+          <itemPath>mcc_generated_files/include/pin_manager.h</itemPath>
+          <itemPath>mcc_generated_files/include/ccp.h</itemPath>
+          <itemPath>mcc_generated_files/include/rstctrl.h</itemPath>
+          <itemPath>mcc_generated_files/include/spi0.h</itemPath>
+          <itemPath>mcc_generated_files/include/tcb3.h</itemPath>
+          <itemPath>mcc_generated_files/include/protected_io.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="utils" displayName="utils" projectFiles="true">
+          <logicalFolder name="assembler" displayName="assembler" projectFiles="true">
+            <itemPath>mcc_generated_files/utils/assembler/iar.h</itemPath>
+            <itemPath>mcc_generated_files/utils/assembler/gas.h</itemPath>
+          </logicalFolder>
+          <itemPath>mcc_generated_files/utils/compiler.h</itemPath>
+          <itemPath>mcc_generated_files/utils/interrupt_avr8.h</itemPath>
+          <itemPath>mcc_generated_files/utils/utils.h</itemPath>
+          <itemPath>mcc_generated_files/utils/utils_assert.h</itemPath>
+          <itemPath>mcc_generated_files/utils/assembler.h</itemPath>
+          <itemPath>mcc_generated_files/utils/atomic.h</itemPath>
+        </logicalFolder>
+        <itemPath>mcc_generated_files/mcc.h</itemPath>
+      </logicalFolder>
+      <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -12,11 +43,26 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="MCC Generated Files"
+                     displayName="MCC Generated Files"
+                     projectFiles="true">
+        <logicalFolder name="src" displayName="src" projectFiles="true">
+          <itemPath>mcc_generated_files/src/pin_manager.c</itemPath>
+          <itemPath>mcc_generated_files/src/cpuint.c</itemPath>
+          <itemPath>mcc_generated_files/src/spi0.c</itemPath>
+          <itemPath>mcc_generated_files/src/tcb3.c</itemPath>
+          <itemPath>mcc_generated_files/src/protected_io.S</itemPath>
+        </logicalFolder>
+        <itemPath>mcc_generated_files/mcc.c</itemPath>
+        <itemPath>mcc_generated_files/device_config.c</itemPath>
+      </logicalFolder>
+      <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
+      <itemPath>mcc_config.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
