@@ -47,6 +47,9 @@ HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // *****************************************************************************
 // *****************************************************************************
 
+#include <stddef.h>
+#include <string.h>
+#include "../main.h"
 #include "PSF_Config.h"
 
 // *****************************************************************************
@@ -353,7 +356,7 @@ Example :
       #define MCHP_PSF_CONFIG_16BIT_PDTIMER_COUNTER	0 (Sets timeout variable inside the PSF as unsigned 32bit)
     </code>
 **************************************************************************************************/
-#define MCHP_PSF_CONFIG_16BIT_PDTIMER_COUNTER	0
+#define MCHP_PSF_CONFIG_16BIT_PDTIMER_COUNTER	1
 
 // *****************************************************************************
 // *****************************************************************************
@@ -573,7 +576,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory                   
 ************************************************************************/
-#define MCHP_PSF_HOOK_MEMCMP(pObj1, pObj2, iLength)       0                   
+#define MCHP_PSF_HOOK_MEMCMP(pObj1, pObj2, iLength)       memcmp(pObj1, pObj2, iLength)                   
 
 /**************************************************************************
 Function:
@@ -599,7 +602,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory                     
 **************************************************************************/
-#define MCHP_PSF_HOOK_MEMCPY(pDest, pSrc, iLen) 	0
+#define MCHP_PSF_HOOK_MEMCPY(pDest, pSrc, iLen) 	memcpy(pDest, pSrc, iLen)
 
 // *****************************************************************************
 // *****************************************************************************
@@ -1505,7 +1508,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory                                                
 ****************************************************************************************************/
-#define MCHP_PSF_NOTIFY_CALL_BACK(u8PortNum, ePSFNotification)
+#define MCHP_PSF_NOTIFY_CALL_BACK(u8PortNum, ePSFNotification)      PDStack_Events(u8PortNum, ePSFNotification)
                                            
 #endif /*_PSF_API_HOOK_H_*/
 

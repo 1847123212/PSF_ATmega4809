@@ -25,15 +25,79 @@
 #include "mcc_generated_files/mcc.h"
 
 /*
+    PSF Stack Event Handler
+ */
+
+UINT8 PDStack_Events(UINT8 u8PortNum, UINT8 u8PDEvent)
+{
+    UINT8 u8RetVal = FALSE;
+    
+    switch(u8PDEvent)
+    {
+        case eMCHP_PSF_TYPEC_DETACH_EVENT:
+        {
+            UPD_GPIOEnableDisable(u8PortNum,(UINT8)eUPD_PIO2, UPD_DISABLE_GPIO);
+            break;
+        }
+        case eMCHP_PSF_TYPEC_CC1_ATTACH:
+        {
+            UPD_GPIOEnableDisable(u8PortNum,(UINT8)eUPD_PIO2,UPD_ENABLE_GPIO);
+            UPD_GPIOSetDirection(u8PortNum,(UINT8)eUPD_PIO2,UPD_GPIO_SETDIR_OUTPUT);
+            UPD_GPIOSetBufferType(u8PortNum,(UINT8)eUPD_PIO2,UPD_GPIO_SETBUF_PUSHPULL);
+            UPD_GPIOSetClearOutput(u8PortNum,(UINT8)eUPD_PIO2,UPD_GPIO_CLEAR);
+            break;
+        }
+        case eMCHP_PSF_TYPEC_CC2_ATTACH:
+        {
+            UPD_GPIOEnableDisable(u8PortNum,(UINT8)eUPD_PIO2,UPD_ENABLE_GPIO);
+            UPD_GPIOSetDirection(u8PortNum,(UINT8)eUPD_PIO2,UPD_GPIO_SETDIR_OUTPUT);
+            UPD_GPIOSetBufferType(u8PortNum,(UINT8)eUPD_PIO2,UPD_GPIO_SETBUF_PUSHPULL);
+            UPD_GPIOSetClearOutput(u8PortNum,(UINT8)eUPD_PIO2,UPD_GPIO_SET);
+            break;
+        }
+		
+		case eMCHP_PSF_UPDS_IN_IDLE:
+		{
+			//Put MCU in LPM
+			break;
+		}
+        
+        case eMCHP_PSF_VCONN_PWR_FAULT:
+        {
+			/*Returning TRUE to enable PSF to handle the power fault*/
+            u8RetVal = TRUE;
+            break;
+        }
+        
+        case eMCHP_PSF_VBUS_PWR_FAULT:
+        {
+			/*Returning TRUE to enable PSF to handle the power fault*/
+            u8RetVal = TRUE;
+            break;
+        }
+        
+        default:
+            break;
+    }
+
+    return u8RetVal;
+}
+
+/*
     Main application
 */
 int main(void)
 {
     /* Initializes MCU, drivers and middle ware */
     SYSTEM_Initialize();
-
+    
+    /* Initialize PSF Stack*/
+    while(!MchpPSF_Init());
+    
     /* Replace with your application code */
     while (1){
+        /*Run PSF stack*/
+		MchpPSF_RUN();
     }
 }
 /**

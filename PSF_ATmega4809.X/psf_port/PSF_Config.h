@@ -223,7 +223,7 @@ Example:
     #define CONFIG_VENDOR_ID    0x0424u
     </code>                                                                     
   ************************************************************************/
-#define CONFIG_VENDOR_ID		
+#define CONFIG_VENDOR_ID        0x0424u		
                                                                                           
 /************************************************************************
 Summary:
@@ -240,7 +240,7 @@ Example:
 	#define CONFIG_PRODUCT_ID 0x301Cu
     </code>                                                                      
   ************************************************************************/
-#define CONFIG_PRODUCT_ID
+#define CONFIG_PRODUCT_ID       0x301Cu
 
 /************************************************************************
 Summary:
@@ -257,7 +257,7 @@ Example:
     #define CONFIG_HWMINOR_VERSION    0x0
     </code>                                                                    
   ************************************************************************/                                                                                           
-#define CONFIG_HWMINOR_VERSION
+#define CONFIG_HWMINOR_VERSION      0x0u
 
 /************************************************************************
 Summary:
@@ -274,7 +274,7 @@ Example:
     #define CONFIG_HWMAJOR_VERSION    0x1
     </code>                                                                 
   ************************************************************************/                                                                                            
-#define CONFIG_HWMAJOR_VERSION
+#define CONFIG_HWMAJOR_VERSION      0x1u
 
 /************************************************************************
 Summary:
@@ -291,7 +291,7 @@ Example:
     #define CONFIG_SILICON_VERSION    0x01u
     </code>                                                      
   ************************************************************************/                                                                                           
-#define CONFIG_SILICON_VERSION
+#define CONFIG_SILICON_VERSION      0x1u
 
 // *****************************************************************************
 // *****************************************************************************
@@ -337,7 +337,7 @@ Example:
     </code>
 
   **************************************************************************/
- #define CONFIG_DEFINE_UPD350_HW_INTF_SEL
+ #define CONFIG_DEFINE_UPD350_HW_INTF_SEL       CONFIG_UPD350_SPI
 
 // *****************************************************************************
 // *****************************************************************************
@@ -447,8 +447,8 @@ Example:
     </code>
 **************************************************************************************************/
 #define CONFIG_PORT_n_SOURCE_NUM_OF_PDOS		
-#define CONFIG_PORT_0_SOURCE_NUM_OF_PDOS           1
-#define CONFIG_PORT_1_SOURCE_NUM_OF_PDOS           1
+#define CONFIG_PORT_0_SOURCE_NUM_OF_PDOS           4
+#define CONFIG_PORT_1_SOURCE_NUM_OF_PDOS           4
 #define CONFIG_PORT_2_SOURCE_NUM_OF_PDOS           1
 #define CONFIG_PORT_3_SOURCE_NUM_OF_PDOS           1
 
@@ -469,10 +469,10 @@ Example:
     </code>
 **************************************************************************************************/
 #define CONFIG_PORT_n_SOURCE_USB_SUSPEND
-#define CONFIG_PORT_0_SOURCE_USB_SUSPEND         0
-#define CONFIG_PORT_1_SOURCE_USB_SUSPEND         0
-#define CONFIG_PORT_2_SOURCE_USB_SUSPEND         0
-#define CONFIG_PORT_3_SOURCE_USB_SUSPEND         0
+#define CONFIG_PORT_0_SOURCE_USB_SUSPEND         0ul
+#define CONFIG_PORT_1_SOURCE_USB_SUSPEND         0ul
+#define CONFIG_PORT_2_SOURCE_USB_SUSPEND         0ul
+#define CONFIG_PORT_3_SOURCE_USB_SUSPEND         0ul
 
 /**************************************************************************************************
 Summary:
@@ -491,10 +491,10 @@ Example:
     </code>
 **************************************************************************************************/
 #define CONFIG_PORT_n_SOURCE_UNCONSTRAINED_PWR
-#define CONFIG_PORT_0_SOURCE_UNCONSTRAINED_PWR         1
-#define CONFIG_PORT_1_SOURCE_UNCONSTRAINED_PWR         1
-#define CONFIG_PORT_2_SOURCE_UNCONSTRAINED_PWR         1
-#define CONFIG_PORT_3_SOURCE_UNCONSTRAINED_PWR         1
+#define CONFIG_PORT_0_SOURCE_UNCONSTRAINED_PWR         1ul
+#define CONFIG_PORT_1_SOURCE_UNCONSTRAINED_PWR         1ul
+#define CONFIG_PORT_2_SOURCE_UNCONSTRAINED_PWR         1ul
+#define CONFIG_PORT_3_SOURCE_UNCONSTRAINED_PWR         1ul
 
 /**************************************************************************************************
 Summary:
@@ -513,10 +513,10 @@ Example:
     </code>
 **************************************************************************************************/
 #define CONFIG_PORT_n_SOURCE_USB_COM
-#define CONFIG_PORT_0_SOURCE_USB_COM         0
-#define CONFIG_PORT_1_SOURCE_USB_COM         0
-#define CONFIG_PORT_2_SOURCE_USB_COM         0
-#define CONFIG_PORT_3_SOURCE_USB_COM         0
+#define CONFIG_PORT_0_SOURCE_USB_COM         0ul
+#define CONFIG_PORT_1_SOURCE_USB_COM         0ul
+#define CONFIG_PORT_2_SOURCE_USB_COM         0ul
+#define CONFIG_PORT_3_SOURCE_USB_COM         0ul
 
 /**************************************************************************************************
 Summary:
@@ -535,37 +535,37 @@ Example:
     </code>
 **************************************************************************************************/
 #define CONFIG_PORT_n_SOURCE_PDO_x_CURRENT 
-#define CONFIG_PORT_0_SOURCE_PDO_1_CURRENT         3000        /* Specify in mA */
-#define CONFIG_PORT_0_SOURCE_PDO_2_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_0_SOURCE_PDO_3_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_0_SOURCE_PDO_4_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_0_SOURCE_PDO_5_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_0_SOURCE_PDO_6_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_0_SOURCE_PDO_7_CURRENT         0           /* Specify in mA */
+#define CONFIG_PORT_0_SOURCE_PDO_1_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_0_SOURCE_PDO_2_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_0_SOURCE_PDO_3_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_0_SOURCE_PDO_4_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_0_SOURCE_PDO_5_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_0_SOURCE_PDO_6_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_0_SOURCE_PDO_7_CURRENT         0ul           /* Specify in mA */
 
-#define CONFIG_PORT_1_SOURCE_PDO_1_CURRENT         3000        /* Specify in mA */
-#define CONFIG_PORT_1_SOURCE_PDO_2_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_1_SOURCE_PDO_3_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_1_SOURCE_PDO_4_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_1_SOURCE_PDO_5_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_1_SOURCE_PDO_6_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_1_SOURCE_PDO_7_CURRENT         0           /* Specify in mA */
+#define CONFIG_PORT_1_SOURCE_PDO_1_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_1_SOURCE_PDO_2_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_1_SOURCE_PDO_3_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_1_SOURCE_PDO_4_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_1_SOURCE_PDO_5_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_1_SOURCE_PDO_6_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_1_SOURCE_PDO_7_CURRENT         0ul           /* Specify in mA */
 
-#define CONFIG_PORT_2_SOURCE_PDO_1_CURRENT         3000        /* Specify in mA */
-#define CONFIG_PORT_2_SOURCE_PDO_2_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_2_SOURCE_PDO_3_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_2_SOURCE_PDO_4_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_2_SOURCE_PDO_5_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_2_SOURCE_PDO_6_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_2_SOURCE_PDO_7_CURRENT         0           /* Specify in mA */
+#define CONFIG_PORT_2_SOURCE_PDO_1_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_2_SOURCE_PDO_2_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_2_SOURCE_PDO_3_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_2_SOURCE_PDO_4_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_2_SOURCE_PDO_5_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_2_SOURCE_PDO_6_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_2_SOURCE_PDO_7_CURRENT         0ul           /* Specify in mA */
 
-#define CONFIG_PORT_3_SOURCE_PDO_1_CURRENT         3000        /* Specify in mA */
-#define CONFIG_PORT_3_SOURCE_PDO_2_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_3_SOURCE_PDO_3_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_3_SOURCE_PDO_4_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_3_SOURCE_PDO_5_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_3_SOURCE_PDO_6_CURRENT         0           /* Specify in mA */
-#define CONFIG_PORT_3_SOURCE_PDO_7_CURRENT         0           /* Specify in mA */
+#define CONFIG_PORT_3_SOURCE_PDO_1_CURRENT         3000ul        /* Specify in mA */
+#define CONFIG_PORT_3_SOURCE_PDO_2_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_3_SOURCE_PDO_3_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_3_SOURCE_PDO_4_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_3_SOURCE_PDO_5_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_3_SOURCE_PDO_6_CURRENT         0ul           /* Specify in mA */
+#define CONFIG_PORT_3_SOURCE_PDO_7_CURRENT         0ul           /* Specify in mA */
 
 /**************************************************************************************************
 Summary:
@@ -583,37 +583,37 @@ Example:
     </code>
 **************************************************************************************************/
 #define CONFIG_PORT_n_SOURCE_PDO_x_VOLTAGE
-#define CONFIG_PORT_0_SOURCE_PDO_1_VOLTAGE         5000        /* Specify in mV */
-#define CONFIG_PORT_0_SOURCE_PDO_2_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_0_SOURCE_PDO_3_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_0_SOURCE_PDO_4_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_0_SOURCE_PDO_5_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_0_SOURCE_PDO_6_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_0_SOURCE_PDO_7_VOLTAGE         0           /* Specify in mV */
+#define CONFIG_PORT_0_SOURCE_PDO_1_VOLTAGE         5000ul        /* Specify in mV */
+#define CONFIG_PORT_0_SOURCE_PDO_2_VOLTAGE         9000ul        /* Specify in mV */
+#define CONFIG_PORT_0_SOURCE_PDO_3_VOLTAGE         15000ul       /* Specify in mV */
+#define CONFIG_PORT_0_SOURCE_PDO_4_VOLTAGE         20000ul       /* Specify in mV */
+#define CONFIG_PORT_0_SOURCE_PDO_5_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_0_SOURCE_PDO_6_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_0_SOURCE_PDO_7_VOLTAGE         0ul           /* Specify in mV */
 
-#define CONFIG_PORT_1_SOURCE_PDO_1_VOLTAGE         5000        /* Specify in mV */
-#define CONFIG_PORT_1_SOURCE_PDO_2_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_1_SOURCE_PDO_3_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_1_SOURCE_PDO_4_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_1_SOURCE_PDO_5_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_1_SOURCE_PDO_6_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_1_SOURCE_PDO_7_VOLTAGE         0           /* Specify in mV */
+#define CONFIG_PORT_1_SOURCE_PDO_1_VOLTAGE         5000ul        /* Specify in mV */
+#define CONFIG_PORT_1_SOURCE_PDO_2_VOLTAGE         9000ul        /* Specify in mV */
+#define CONFIG_PORT_1_SOURCE_PDO_3_VOLTAGE         15000ul       /* Specify in mV */
+#define CONFIG_PORT_1_SOURCE_PDO_4_VOLTAGE         20000ul       /* Specify in mV */
+#define CONFIG_PORT_1_SOURCE_PDO_5_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_1_SOURCE_PDO_6_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_1_SOURCE_PDO_7_VOLTAGE         0ul           /* Specify in mV */
 
-#define CONFIG_PORT_2_SOURCE_PDO_1_VOLTAGE         5000        /* Specify in mV */
-#define CONFIG_PORT_2_SOURCE_PDO_2_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_2_SOURCE_PDO_3_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_2_SOURCE_PDO_4_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_2_SOURCE_PDO_5_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_2_SOURCE_PDO_6_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_2_SOURCE_PDO_7_VOLTAGE         0           /* Specify in mV */
+#define CONFIG_PORT_2_SOURCE_PDO_1_VOLTAGE         5000ul        /* Specify in mV */
+#define CONFIG_PORT_2_SOURCE_PDO_2_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_2_SOURCE_PDO_3_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_2_SOURCE_PDO_4_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_2_SOURCE_PDO_5_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_2_SOURCE_PDO_6_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_2_SOURCE_PDO_7_VOLTAGE         0ul           /* Specify in mV */
 
 #define CONFIG_PORT_3_SOURCE_PDO_1_VOLTAGE         5000        /* Specify in mV */
-#define CONFIG_PORT_3_SOURCE_PDO_2_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_3_SOURCE_PDO_3_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_3_SOURCE_PDO_4_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_3_SOURCE_PDO_5_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_3_SOURCE_PDO_6_VOLTAGE         0           /* Specify in mV */
-#define CONFIG_PORT_3_SOURCE_PDO_7_VOLTAGE         0           /* Specify in mV */
+#define CONFIG_PORT_3_SOURCE_PDO_2_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_3_SOURCE_PDO_3_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_3_SOURCE_PDO_4_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_3_SOURCE_PDO_5_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_3_SOURCE_PDO_6_VOLTAGE         0ul           /* Specify in mV */
+#define CONFIG_PORT_3_SOURCE_PDO_7_VOLTAGE         0ul           /* Specify in mV */
 
 // *****************************************************************************
 // *****************************************************************************
