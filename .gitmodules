@@ -1,0 +1,3 @@
+[submodule "usb-pd-software-framework"]
+	path = usb-pd-software-framework
+	url = https://github.com/MicrochipTech/usb-pd-software-framework.git
