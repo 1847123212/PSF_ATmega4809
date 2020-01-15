@@ -12,7 +12,11 @@
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList/>
+            <sourceRootList>
+                <sourceRootElem>../usb-pd-software-framework/PSF/Source/PD3_0</sourceRootElem>
+                <sourceRootElem>../usb-pd-software-framework/PSF/Source/include</sourceRootElem>
+                <sourceRootElem>psf_port</sourceRootElem>
+            </sourceRootList>
             <confList>
                 <confElem>
                     <name>default</name>
