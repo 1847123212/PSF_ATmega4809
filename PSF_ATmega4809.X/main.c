@@ -184,6 +184,39 @@ void Timer_Callback(void)
 }
 
 /*
+    Initialize UPD IRQs
+ */
+void IRQ_Init(UINT8 u8PortNum)
+{
+    if(u8PortNum == PORT0)
+    {
+        /* Register IRQ0 callback */
+        PORTC_PC6_IRQ0_SetInterruptHandler(IRQ0_Callback);
+    }
+    else if(u8PortNum == PORT1)
+    {
+        /* Register IRQ1 callback */
+        PORTB_PB2_IRQ1_SetInterruptHandler(IRQ1_Callback);
+    }
+}
+
+/*
+    IRQ0 callback (PORT0)
+ */
+void IRQ0_Callback(void)
+{
+    MchpPSF_UPDIrqHandler(PORT0);
+}
+
+/*
+    IRQ1 callback (PORT1)
+ */
+void IRQ1_Callback(void)
+{
+    MchpPSF_UPDIrqHandler(PORT1);
+}
+
+/*
     Reset all UPD devices
  */
 void Reset_UPD350(UINT8 u8PortNum)

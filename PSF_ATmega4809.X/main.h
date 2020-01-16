@@ -11,7 +11,20 @@
 #include "psf_stdinc.h"
 #include "mcc_generated_files/utils/interrupt_avr8.h"
 
-//SAMD20_UPD350AlertInit(u8PortNum)
+/*
+    Initialize UPD IRQs
+ */
+void IRQ_Init(UINT8 u8PortNum);
+
+/*
+    IRQ0 callback (PORT0)
+ */
+void IRQ0_Callback(void);
+
+/*
+    IRQ1 callback (PORT1)
+ */
+void IRQ1_Callback(void);
 
 /*
     Initialize SPI

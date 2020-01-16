@@ -405,7 +405,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory                     
 **************************************************************************/
-#define MCHP_PSF_HOOK_UPD_IRQ_GPIO_INIT(u8PortNum)
+#define MCHP_PSF_HOOK_UPD_IRQ_GPIO_INIT(u8PortNum)      IRQ_Init(u8PortNum)
 
 // *****************************************************************************
 // *****************************************************************************
