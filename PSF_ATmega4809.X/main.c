@@ -25,9 +25,8 @@
 #include "mcc_generated_files/mcc.h"
 
 /*
-    PSF Stack Event Handler
+    PSF stack event handler
  */
-
 UINT8 PDStack_Events(UINT8 u8PortNum, UINT8 u8PDEvent)
 {
     UINT8 u8RetVal = FALSE;
@@ -84,6 +83,14 @@ UINT8 PDStack_Events(UINT8 u8PortNum, UINT8 u8PDEvent)
 }
 
 /*
+    Timer callback
+ */
+void Timer_Callback(void)
+{
+    MchpPSF_PDTimerHandler();
+}
+
+/*
     Main application
 */
 int main(void)
@@ -91,12 +98,15 @@ int main(void)
     /* Initializes MCU, drivers and middle ware */
     SYSTEM_Initialize();
     
-    /* Initialize PSF Stack*/
+    /* Register timer callback */
+    TCB3_SetCaptIsrCallback(Timer_Callback);
+    
+    /* Initialize PSF Stack */
     while(!MchpPSF_Init());
     
     /* Replace with your application code */
     while (1){
-        /*Run PSF stack*/
+        /*Run PSF stack */
 		MchpPSF_RUN();
     }
 }

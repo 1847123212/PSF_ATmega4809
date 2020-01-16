@@ -517,7 +517,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory                            
 *********************************************************************************/
-#define MCHP_PSF_HOOK_DISABLE_GLOBAL_INTERRUPT()           
+#define MCHP_PSF_HOOK_DISABLE_GLOBAL_INTERRUPT()    Disable_global_interrupt()           
 
 /*******************************************************************************
 Function:
@@ -545,7 +545,7 @@ Example:
 Remarks:
 User definition of this Hook function is mandatory                          
 *******************************************************************************/                           
-#define MCHP_PSF_HOOK_ENABLE_GLOBAL_INTERRUPT()
+#define MCHP_PSF_HOOK_ENABLE_GLOBAL_INTERRUPT()     Enable_global_interrupt()             
 
 // *****************************************************************************
 // *****************************************************************************
