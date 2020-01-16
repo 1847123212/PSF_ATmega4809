@@ -101,6 +101,39 @@ UINT8 SPI_Init(void)
 }
 
 /*
+    Select SPI Slave 
+ */
+void SPI_Select_Slave(UINT8 u8PortNum, UINT8 u8EnableComm)
+{
+    if (u8EnableComm == TRUE)
+    {
+        /* Drive SS low to enable port */
+        if (u8PortNum == PORT0)
+        {
+            /* PA7_SS0 */
+            PA7_SS0_SetLow();
+        }
+        else if(u8PortNum == PORT1)
+        {
+            /* PE1_SS1 */
+            PE1_SS1_SetLow();
+        }
+    }
+    else if (u8EnableComm == FALSE)
+    {
+        /* Drive SS high to disable port */
+        if (u8PortNum == PORT0)
+        {
+            PA7_SS0_SetHigh();
+        }
+        else if(u8PortNum == PORT1)
+        {
+            PE1_SS1_SetHigh();
+        }
+    }
+}
+
+/*
     Initialize timer callback
  */
 UINT8 Timer_Init(void)

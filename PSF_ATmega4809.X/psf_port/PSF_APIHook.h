@@ -158,7 +158,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory for SPI Hardware interface                                           
 *************************************************************************************************/
-#define MCHP_PSF_HOOK_UPD_COMM_ENDIS(u8PortNum,u8EnDis)
+#define MCHP_PSF_HOOK_UPD_COMM_ENDIS(u8PortNum,u8EnDis)     SPI_Select_Slave(u8PortNum,u8EnDis)
 
 /*********************************************************************************************
 Function:

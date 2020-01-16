@@ -11,7 +11,6 @@
 #include "psf_stdinc.h"
 #include "mcc_generated_files/utils/interrupt_avr8.h"
 
-//SAMD20_DriveChipSelect(u8PortNum,u8Enable)
 //SAMD20_SPIWritedriver(u8PortNum,pu8WriteBuf,u8WriteLen)
 //SAMD20_SPIReaddriver(u8PortNum,pu8WriteBuf,u8WriteLen,pu8ReadBuf, u8ReadLen)
 //SAMD20_UPD350AlertInit(u8PortNum)
@@ -20,6 +19,11 @@
     Initialize SPI
  */
 UINT8 SPI_Init(void);
+
+/*
+    Select SPI Slave 
+ */
+void SPI_Select_Slave(UINT8 u8PortNum, UINT8 u8EnableComm);
 
 /*
     Reset all UPD devices
