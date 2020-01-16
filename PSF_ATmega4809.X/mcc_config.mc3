@@ -29,6 +29,10 @@
          <string>class com.microchip.mcc.mcu8.pinManager.PinManager</string>
       </entry>
       <entry>
+         <string>DELAY</string>
+         <string>class com.microchip.mcc.foundationservices.modules.softwaredriver.delay.DELAY</string>
+      </entry>
+      <entry>
          <string>RSTCTRL</string>
          <string>class com.microchip.mcc.mcu8.systemManager.tiny_mega_init.rstctrl.RSTCTRL</string>
       </entry>
@@ -46,6 +50,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.1.34"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu8.Mcu8AVRPeripheralLibrary" version="2.0.1"/>
    </usedLibraries>
    <tokenMap class="java.util.HashMap">
@@ -95,7 +100,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="PORTE.OUT"/>
-         <value>0</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="PORTB.DIR"/>
@@ -263,7 +268,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="PORTA.OUT"/>
-         <value>4</value>
+         <value>132</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="PE2"/>
@@ -911,7 +916,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="OUT_PA7"/>
-         <value>false</value>
+         <value>true</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="PORTF.PIN2CTRL" settingAlias="ISC" alias="LEVEL"/>
@@ -1219,7 +1224,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="OUT_PE1"/>
-         <value>false</value>
+         <value>true</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="PORTD.PIN1CTRL" settingAlias="PULLUPEN" alias="enabled"/>
@@ -3155,7 +3160,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="PORTE.OUT" settingAlias="PORTE.OUT"/>
-         <value>0</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="BOD" name="BOD_VLMISRFunction"/>
@@ -5630,12 +5635,12 @@
          <value>OFF</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI0" registerAlias="INTFLAGS" settingAlias="DREIF" alias="enabled"/>
-         <value>1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TCB3" registerAlias="EVCTRL" settingAlias="CAPTEI" alias="disabled"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="SPI0" registerAlias="INTFLAGS" settingAlias="DREIF" alias="enabled"/>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CLKCTRL" registerAlias="OSC20MCTRLA" settingAlias="RUNSTDBY"/>
@@ -5991,7 +5996,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="PORTA.OUT" settingAlias="PORTA.OUT"/>
-         <value>4</value>
+         <value>132</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="CLKCTRL" registerAlias="MCLKCTRLB" settingAlias="PDIV"/>
@@ -7013,7 +7018,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\include\pin_manager.h</file>
-         <hash>c00db5da3186c238c34d5890391086d326e34c6f06ad3c5f28ca57f08e323905</hash>
+         <hash>b8bc710a488f436d7fa8d62dbcc7b0427d768c1a0b2129e56f1402a704f23828</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\utils\compiler.h</file>
@@ -7033,7 +7038,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\src\pin_manager.c</file>
-         <hash>91d41de032c57c7f00bf2cf17a5e75c14bc53e1237cc88322b4b34bcae46c294</hash>
+         <hash>e37586abc9a46ec02691c2d165e7c58a35a696940ed877c8741061a4b9ec5c38</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\include\tcb3.h</file>
@@ -7048,6 +7053,14 @@
          <hash>c7ab02c0a91bda858b1d56194df4b7471ecc79c590409f98435c8a8b7a1253ec</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\delay.c</file>
+         <hash>589f16fa668aa7ed1bf497220429a39d67f703d3155c2a8b460d9cc16b8f446c</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\delay.h</file>
+         <hash>bcdb6d54c3b91590cc267f1d1ffcc0baeb4ad72a3ef69dcb8de17fbeafe73f61</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\include\ccp.h</file>
          <hash>41d0cd497b8cf56d50c95c9e110dfd3e13be731047edea41d68bb2ad8d19f671</hash>
       </entry>
@@ -7057,7 +7070,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.c</file>
-         <hash>2ee852368a7eb78182a7c94f1f9e0929517d561fa7ea5fe95adc268f69ccf1d7</hash>
+         <hash>8ecdde1fdbd319114d91c97a71911e0230091e111798d2f18511b163652c03fc</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\utils\assembler\iar.h</file>
@@ -7065,7 +7078,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>c152699909c6392bf2db285c831fa71a6d84423d8f50c8ca9571d29d64bf8d52</hash>
+         <hash>c57c7b0532eb6484ce6ad8bd8bcce54b162760ff682b3ea1acbc019c8d45e84f</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\include\port.h</file>

@@ -24,9 +24,9 @@
 #include "../include/pin_manager.h"
 static void (*PORTA_PA2_RESET_InterruptHandler)(void);
 static void (*PORTB_PB2_IRQ1_InterruptHandler)(void);
-static void (*PORTA_PA4_InterruptHandler)(void);
 static void (*PORTC_PC6_IRQ0_InterruptHandler)(void);
 static void (*PORTB_PB5_InterruptHandler)(void);
+static void (*PORTA_PA4_InterruptHandler)(void);
 static void (*PORTA_PA6_InterruptHandler)(void);
 static void (*PORTA_PA5_InterruptHandler)(void);
 static void (*PORTA_PA7_SS0_InterruptHandler)(void);
@@ -47,11 +47,11 @@ void PIN_MANAGER_Initialize()
     PORTF.DIR = 0x00;
 
     /* OUT Registers Initialization */
-    PORTA.OUT = 0x04;
+    PORTA.OUT = 0x84;
     PORTB.OUT = 0x00;
     PORTC.OUT = 0x00;
     PORTD.OUT = 0x00;
-    PORTE.OUT = 0x00;
+    PORTE.OUT = 0x02;
     PORTF.OUT = 0x00;
 
     /* PINxCTRL registers Initialization */
@@ -115,9 +115,9 @@ void PIN_MANAGER_Initialize()
     // register default ISC callback functions at runtime; use these methods to register a custom function
     PORTA_PA2_RESET_SetInterruptHandler(PORTA_PA2_RESET_DefaultInterruptHandler);
     PORTB_PB2_IRQ1_SetInterruptHandler(PORTB_PB2_IRQ1_DefaultInterruptHandler);
-    PORTA_PA4_SetInterruptHandler(PORTA_PA4_DefaultInterruptHandler);
     PORTC_PC6_IRQ0_SetInterruptHandler(PORTC_PC6_IRQ0_DefaultInterruptHandler);
     PORTB_PB5_SetInterruptHandler(PORTB_PB5_DefaultInterruptHandler);
+    PORTA_PA4_SetInterruptHandler(PORTA_PA4_DefaultInterruptHandler);
     PORTA_PA6_SetInterruptHandler(PORTA_PA6_DefaultInterruptHandler);
     PORTA_PA5_SetInterruptHandler(PORTA_PA5_DefaultInterruptHandler);
     PORTA_PA7_SS0_SetInterruptHandler(PORTA_PA7_SS0_DefaultInterruptHandler);
@@ -184,19 +184,6 @@ void PORTB_PB2_IRQ1_DefaultInterruptHandler(void)
     // or set custom function using PORTB_PB2_IRQ1_SetInterruptHandler()
 }
 /**
-  Allows selecting an interrupt handler for PORTA_PA4 at application runtime
-*/
-void PORTA_PA4_SetInterruptHandler(void (* interruptHandler)(void)) 
-{
-    PORTA_PA4_InterruptHandler = interruptHandler;
-}
-
-void PORTA_PA4_DefaultInterruptHandler(void)
-{
-    // add your PORTA_PA4 interrupt custom code
-    // or set custom function using PORTA_PA4_SetInterruptHandler()
-}
-/**
   Allows selecting an interrupt handler for PORTC_PC6_IRQ0 at application runtime
 */
 void PORTC_PC6_IRQ0_SetInterruptHandler(void (* interruptHandler)(void)) 
@@ -221,6 +208,19 @@ void PORTB_PB5_DefaultInterruptHandler(void)
 {
     // add your PORTB_PB5 interrupt custom code
     // or set custom function using PORTB_PB5_SetInterruptHandler()
+}
+/**
+  Allows selecting an interrupt handler for PORTA_PA4 at application runtime
+*/
+void PORTA_PA4_SetInterruptHandler(void (* interruptHandler)(void)) 
+{
+    PORTA_PA4_InterruptHandler = interruptHandler;
+}
+
+void PORTA_PA4_DefaultInterruptHandler(void)
+{
+    // add your PORTA_PA4 interrupt custom code
+    // or set custom function using PORTA_PA4_SetInterruptHandler()
 }
 /**
   Allows selecting an interrupt handler for PORTA_PA6 at application runtime

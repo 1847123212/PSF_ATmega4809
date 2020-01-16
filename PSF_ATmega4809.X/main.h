@@ -11,16 +11,25 @@
 #include "psf_stdinc.h"
 #include "mcc_generated_files/utils/interrupt_avr8.h"
 
-//SAMD20_SPIInitialisation();              
 //SAMD20_DriveChipSelect(u8PortNum,u8Enable)
 //SAMD20_SPIWritedriver(u8PortNum,pu8WriteBuf,u8WriteLen)
 //SAMD20_SPIReaddriver(u8PortNum,pu8WriteBuf,u8WriteLen,pu8ReadBuf, u8ReadLen)
-//SAMD20_HWTimerInit()
 //SAMD20_UPD350AlertInit(u8PortNum)
-//SAMD20_UPD350ResetGPIOInit(u8PortNum)              
-//SAMD20_ResetUPD350(u8PortNum) 
-//SAMD20_EnterCriticalSection()            
-//SAMD20_ExitCriticalSection()
+
+/*
+    Initialize SPI
+ */
+UINT8 SPI_Init(void);
+
+/*
+    Reset all UPD devices
+ */
+void Reset_UPD350(UINT8 u8PortNum);
+
+/*
+    Initialize timer callback
+ */
+UINT8 Timer_Init(void);
 
 /*
     Timer callback

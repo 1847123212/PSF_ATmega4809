@@ -98,7 +98,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory.                    
 **************************************************************************/
-#define MCHP_PSF_HOOK_UPDHW_INTF_INIT()               0     
+#define MCHP_PSF_HOOK_UPDHW_INTF_INIT()               SPI_Init()     
 
 /*************************************************************************************************
 Function:
@@ -318,7 +318,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory                  
 ***********************************************************************/			      
-#define MCHP_PSF_HOOK_HW_PDTIMER_INIT()		0
+#define MCHP_PSF_HOOK_HW_PDTIMER_INIT()     Timer_Init()
 
 /**************************************************************************************************
 Summary:
@@ -484,7 +484,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory                  
 **********************************************************************/
-#define MCHP_PSF_HOOK_UPD_RESET_THRU_GPIO(u8PortNum)
+#define MCHP_PSF_HOOK_UPD_RESET_THRU_GPIO(u8PortNum)    Reset_UPD350(u8PortNum)
 
 // *****************************************************************************
 // *****************************************************************************

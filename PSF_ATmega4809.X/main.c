@@ -25,11 +25,16 @@
 #include "mcc_generated_files/mcc.h"
 
 /*
+    Volatile global to prevent optimization of return values
+ */
+volatile UINT8 u8RetVal = FALSE;
+
+/*
     PSF stack event handler
  */
 UINT8 PDStack_Events(UINT8 u8PortNum, UINT8 u8PDEvent)
 {
-    UINT8 u8RetVal = FALSE;
+    u8RetVal = FALSE;
     
     switch(u8PDEvent)
     {
@@ -83,11 +88,52 @@ UINT8 PDStack_Events(UINT8 u8PortNum, UINT8 u8PDEvent)
 }
 
 /*
+    Initialize SPI
+ */
+UINT8 SPI_Init(void)
+{
+    
+    /* Initialize SPI and return TRUE*/
+    SPI0_Initialize();
+    
+    u8RetVal = TRUE;
+    return u8RetVal;
+}
+
+/*
+    Initialize timer callback
+ */
+UINT8 Timer_Init(void)
+{   
+    /* Initialize timer*/
+    TCB3_Initialize();
+    /* Register timer callback and return TRUE*/
+    TCB3_SetCaptIsrCallback(Timer_Callback);
+    
+    u8RetVal = TRUE;
+    return u8RetVal;
+}
+
+/*
     Timer callback
  */
 void Timer_Callback(void)
 {
     MchpPSF_PDTimerHandler();
+}
+
+/*
+    Reset all UPD devices
+ */
+void Reset_UPD350(UINT8 u8PortNum)
+{
+    if(u8PortNum == PORT0)
+    {
+        PA2_RESET_SetLow();
+        /* Minimum reset time is 1 microsecond */
+        DELAY_microseconds(10);
+        PA2_RESET_SetHigh();
+    }
 }
 
 /*
@@ -97,10 +143,7 @@ int main(void)
 {
     /* Initializes MCU, drivers and middle ware */
     SYSTEM_Initialize();
-    
-    /* Register timer callback */
-    TCB3_SetCaptIsrCallback(Timer_Callback);
-    
+
     /* Initialize PSF Stack */
     while(!MchpPSF_Init());
     
@@ -110,6 +153,7 @@ int main(void)
 		MchpPSF_RUN();
     }
 }
+
 /**
     End of File
 */

@@ -33,6 +33,7 @@
           <itemPath>mcc_generated_files/utils/atomic.h</itemPath>
         </logicalFolder>
         <itemPath>mcc_generated_files/mcc.h</itemPath>
+        <itemPath>mcc_generated_files/delay.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="PSF Port" projectFiles="true">
         <itemPath>psf_port/PSF_APIHook.h</itemPath>
@@ -78,6 +79,7 @@
         </logicalFolder>
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/device_config.c</itemPath>
+        <itemPath>mcc_generated_files/delay.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="PSF Source" projectFiles="true">
         <logicalFolder name="PD3_0" displayName="PD3_0" projectFiles="true">
