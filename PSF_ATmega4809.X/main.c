@@ -134,6 +134,34 @@ void SPI_Select_Slave(UINT8 u8PortNum, UINT8 u8EnableComm)
 }
 
 /*
+    SPI Write
+ */
+UINT8 SPI_Write(UINT8 u8PortNum, UINT8 *pu8WriteBuffer, UINT8 u8Writelength)
+{
+    /* Write buffer to SPI bus, SS is handled by PSF through SPI_Select_Slave() */
+    SPI0_WriteBlock(pu8WriteBuffer, u8Writelength);
+    
+    /* Return TRUE */
+    u8RetVal = TRUE;
+    return u8RetVal;
+}
+
+/*
+    SPI Read
+ */
+UINT8 SPI_Read(UINT8 u8PortNum, UINT8 *pu8WriteBuffer, UINT8 u8Writelength, UINT8 *pu8ReadBuffer, UINT8 u8Readlength)
+{
+    /* Write buffer to SPI bus, SS is handled by PSF through SPI_Select_Slave() */
+    SPI0_WriteBlock(pu8WriteBuffer, u8Writelength);
+    /* Read buffer from SPI bus, SS is handled by PSF through SPI_Select_Slave() */
+    SPI0_ReadBlock(pu8ReadBuffer, u8Readlength);
+    
+    /* Return TRUE */
+    u8RetVal = TRUE;
+    return u8RetVal;
+}
+
+/*
     Initialize timer callback
  */
 UINT8 Timer_Init(void)

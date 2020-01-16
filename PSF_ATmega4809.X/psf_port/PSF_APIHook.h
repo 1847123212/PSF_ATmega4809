@@ -211,7 +211,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory                                        
 *********************************************************************************************/
-#define MCHP_PSF_HOOK_UPD_WRITE(u8PortNum,pu8WriteBuf,u8WriteLen)	0
+#define MCHP_PSF_HOOK_UPD_WRITE(u8PortNum,pu8WriteBuf,u8WriteLen)       SPI_Write(u8PortNum,pu8WriteBuf,u8WriteLen)
 
 /***************************************************************************************
 Function:
@@ -281,7 +281,7 @@ Example:
 Remarks:
     User definition of this Hook function is mandatory.                                 
 ***************************************************************************************/
-#define MCHP_PSF_HOOK_UPD_READ(u8PortNum,pu8WriteBuf,u8WriteLen,pu8ReadBuf, u8ReadLen)	0
+#define MCHP_PSF_HOOK_UPD_READ(u8PortNum,pu8WriteBuf,u8WriteLen,pu8ReadBuf, u8ReadLen)      SPI_Read(u8PortNum,pu8WriteBuf,u8WriteLen,pu8ReadBuf, u8ReadLen)
 
 // *****************************************************************************
 // *****************************************************************************
